@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:revbank/views/profile_widget.dart';
@@ -132,31 +131,5 @@ class ProfileViewV2 extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Widget _buildProfileImage(String base64String) {
-    try {
-      // If the Base64 string has a data URI prefix, strip it out
-      final cleanedBase64 = base64String.contains(',')
-          ? base64String.split(',').last
-          : base64String;
-
-      final imageBytes = base64Decode(cleanedBase64);
-      return Image.memory(
-        imageBytes,
-        fit: BoxFit.cover,
-        errorBuilder: (context, error, stackTrace) => const Icon(
-          Icons.person,
-          size: 50,
-          color: Colors.grey,
-        ),
-      );
-    } catch (e) {
-      return const Icon(
-        Icons.person,
-        size: 50,
-        color: Colors.grey,
-      );
-    }
   }
 }

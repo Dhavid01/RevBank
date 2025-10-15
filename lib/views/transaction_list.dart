@@ -55,7 +55,7 @@ class TransactionList extends StatelessWidget {
               ],
             ),
           ),
-          Divider(thickness: 0.3),
+          const Divider(thickness: 0.3),
         ],
       ),
     );
